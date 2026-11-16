@@ -13,6 +13,7 @@
 :root{
   --red:#8E2F33; --red-2:#A03A3E; --bone:#F6F4EE; --ink:#16231F; --muted:#5F6B66;
   --gold:#C9A66B; --line:#DAD6CA; --on-red:#F8EEEA; --soft:#EBCFCB;
+  --alert-bg:#FDF8F6; --alert-border:#E5C5C0;
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --helv:"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -33,24 +34,32 @@ h2.name{font-family:var(--serif);font-weight:300;font-size:clamp(29px,8.4vw,34px
 .medal{width:70px;height:70px;border-radius:50%;border:1px solid var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none;color:var(--red)}
 .medal small{font-size:10px;letter-spacing:.12em;line-height:1;color:var(--muted)}
 .medal b{font-family:var(--serif);font-weight:300;font-size:30px;line-height:1.05}
-.sos{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;background:var(--red);color:var(--on-red);text-decoration:none;border-radius:999px;padding:8px 20px;min-height:54px}
+.sos{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px;background:var(--red);color:var(--on-red);text-decoration:none;border-radius:999px;padding:8px 20px;min-height:54px}
 .sos svg{width:22px;height:22px;flex:none}
 .sos span{text-align:left;line-height:1.15;font-weight:500;font-size:18px}
 .sos small{display:block;font-weight:400;font-size:12px;color:var(--soft)}
 .sos:hover{background:var(--red-2)}
-.steps{list-style:none;padding:0;margin:12px 4px 0}
+.steps{list-style:none;padding:0;margin:10px 4px 0}
 .steps li{position:relative;padding:3px 0 3px 20px;font-size:15px;line-height:1.35}
 .steps li::before{content:"";position:absolute;left:3px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--red)}
 .steps b{font-weight:500}
 .steps svg{width:14px;height:14px;vertical-align:-2px;color:var(--red)}
-.label{font-family:var(--serif);font-size:19px;margin:12px 4px 2px;padding-top:10px;border-top:1px solid var(--line)}
-.contact{display:flex;align-items:center;gap:8px;padding:8px 4px}
+
+/* Estilos para Alergias / EPS */
+.medical-info{background:var(--alert-bg);border:1px solid var(--alert-border);border-radius:12px;padding:8px 12px;margin:10px 4px 0;display:flex;flex-direction:column;gap:5px}
+.med-item{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+.med-item+.med-item{border-top:1px dashed var(--line);padding-top:5px}
+.med-item span{color:var(--muted);font-size:13px}
+.med-item b{font-weight:500;color:var(--ink);text-align:right}
+
+.label{font-family:var(--serif);font-size:19px;margin:10px 4px 2px;padding-top:8px;border-top:1px solid var(--line)}
+.contact{display:flex;align-items:center;gap:8px;padding:6px 4px}
 .contact+.contact{border-top:1px solid var(--line)}
 .who{flex:1;min-width:0}
-.who small{display:block;font-size:12.5px;color:var(--muted);white-space:nowrap}
-.who b{display:block;font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.15;font-variant-numeric:lining-nums tabular-nums}
-.btn{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer;text-decoration:none;font:inherit}
-.btn svg{width:21px;height:21px}
+.who small{display:block;font-size:12px;color:var(--muted);white-space:nowrap}
+.who b{display:block;font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.15;font-variant-numeric:lining-nums tabular-nums}
+.btn{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer;text-decoration:none;font:inherit}
+.btn svg{width:20px;height:20px}
 .call{background:var(--red);color:var(--bone);border:1px solid var(--red)}
 .call:hover{background:var(--red-2)}
 .wa{background:transparent;color:var(--red);border:1px solid var(--red)}
@@ -59,29 +68,27 @@ h2.name{font-family:var(--serif);font-weight:300;font-size:clamp(29px,8.4vw,34px
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 footer{text-align:center;margin-top:auto;padding:2px 0 2px}
 .by{font-family:var(--helv);font-weight:500;font-size:12px;letter-spacing:.06em;color:var(--on-red);opacity:.9}
-/* Escala con la altura de la pantalla: se ve todo sin scroll y con aire */
-.page{gap:clamp(6px,1.8dvh,16px)}
-.top svg{width:clamp(34px,5.4dvh,48px);height:auto}
-.top h1{font-size:clamp(20px,3.1dvh,26px)}
-.card{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(10px,3dvh,28px) 22px clamp(8px,2dvh,20px)}
-h2.name{font-size:clamp(30px,4.8dvh,40px)}
-.medal{width:clamp(64px,9.4dvh,84px);height:clamp(64px,9.4dvh,84px)}
-.medal b{font-size:clamp(28px,4.2dvh,36px)}
-.sos{margin-top:0;min-height:clamp(46px,7.6dvh,66px)}
-.sos span{font-size:clamp(18px,2.6dvh,21px)}
+
+/* Escala con la altura de la pantalla */
+.page{gap:clamp(4px,1.5dvh,14px)}
+.top svg{width:clamp(32px,5dvh,44px);height:auto}
+.top h1{font-size:clamp(19px,2.8dvh,24px)}
+.card{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(10px,2.5dvh,22px) 18px clamp(8px,1.5dvh,16px)}
+h2.name{font-size:clamp(26px,4.5dvh,38px)}
+.medal{width:clamp(56px,8dvh,70px);height:clamp(56px,8dvh,70px)}
+.medal b{font-size:clamp(25px,3.5dvh,32px)}
+.sos{margin-top:0;min-height:clamp(44px,7dvh,60px)}
+.sos span{font-size:clamp(17px,2.4dvh,20px)}
 .steps{margin:0 4px}
-.steps li{font-size:clamp(15px,2dvh,16px);padding:clamp(2px,.8dvh,7px) 0 clamp(2px,.8dvh,7px) 20px}
+.steps li{font-size:clamp(14px,1.8dvh,15px);padding:clamp(2px,.6dvh,5px) 0 clamp(2px,.6dvh,5px) 20px}
 .steps li::before{top:50%;transform:translateY(-50%)}
-.label{margin:0 4px;padding-top:clamp(8px,1.6dvh,14px);font-size:clamp(19px,2.6dvh,22px)}
-.contact{padding:clamp(4px,1.5dvh,14px) 4px}
-.who b{font-size:clamp(25px,3.8dvh,32px)}
-.btn{width:clamp(42px,6.1dvh,54px);height:clamp(42px,6.1dvh,54px)}
-footer{padding:clamp(2px,.6dvh,8px) 0}
-/* nombre centrado y RH en el centro, debajo */
-.id{flex-direction:column;justify-content:center;gap:clamp(6px,1.3dvh,12px);text-align:center;padding:0}
-h2.name{text-align:center;font-size:clamp(30px,5dvh,42px)}
-.medal{width:clamp(58px,8dvh,74px);height:clamp(58px,8dvh,74px)}
-.medal b{font-size:clamp(26px,3.7dvh,33px)}
+.label{margin:0 4px;padding-top:clamp(6px,1.2dvh,10px);font-size:clamp(18px,2.4dvh,21px)}
+.contact{padding:clamp(2px,1dvh,10px) 4px}
+.who b{font-size:clamp(23px,3.4dvh,29px)}
+.btn{width:clamp(38px,5.5dvh,48px);height:clamp(38px,5.5dvh,48px)}
+footer{padding:clamp(2px,.4dvh,6px) 0}
+.id{flex-direction:column;justify-content:center;gap:clamp(4px,1dvh,10px);text-align:center;padding:0}
+h2.name{text-align:center;font-size:clamp(28px,4.6dvh,38px)}
 </style>
 </head>
 <body>
@@ -125,6 +132,18 @@ h2.name{text-align:center;font-size:clamp(30px,5dvh,42px)}
     <li>Dile dónde están: usa el botón <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-10.5a6 6 0 0 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg>.</li>
   </ul>
 
+  <!-- BLOQUE DE INFORMACIÓN MÉDICA Y EPS -->
+  <div class="medical-info">
+    <div class="med-item">
+      <span>Alergias / Alerta:</span>
+      <b>Ninguna conocida / Indicar en médico</b> <!-- Edita aquí si hay alguna alergia específica -->
+    </div>
+    <div class="med-item">
+      <span>EPS Afiliada:</span>
+      <b>Compensar</b>
+    </div>
+  </div>
+
   <a class="sos" href="tel:123">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
     <span>Llamar al 123<small>Línea de emergencias</small></span>
@@ -139,20 +158,15 @@ h2.name{text-align:center;font-size:clamp(30px,5dvh,42px)}
   </div>
   <div class="contact">
     <div class="who"><small>Contacto 2 · Angie, Acudiente</small><b>320 839 0714</b></div>
-    <a class="btn call" href="tel:+573102996845" aria-label="Llamar a Angie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+    <a class="btn call" href="tel:+573208390714" aria-label="Llamar a Angie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
     <button class="btn wa" type="button" data-num="573208390714" aria-label="Enviar mi ubicación a Angie por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-10.5a6 6 0 0 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg></button>
   </div>
-    <div class="contact">
+  <div class="contact">
     <div class="who"><small>Contacto 3 · Olga, Hermana</small><b>314 887 4861</b></div>
     <a class="btn call" href="tel:+573148874861" aria-label="Llamar a Olga"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
     <button class="btn wa" type="button" data-num="573148874861" aria-label="Enviar mi ubicación a Olga por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-10.5a6 6 0 0 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg></button>
   </div>
   </section>
-
-  <!--
-  PENDIENTE (aprobación de Rosa María). Esta página es pública: muestra solo lo que ella autorice.
-  Alergias a medicamentos · Condiciones o medicación importante · EPS
-  -->
 </main>
 
 <footer><div class="by">by Zhezu Studio 3D</div></footer>
